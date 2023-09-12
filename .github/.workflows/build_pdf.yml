@@ -1,0 +1,59 @@
+name: Advanced Usage
+
+on: push
+
+jobs:
+  make_pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: create file list
+        id: files_list
+        run: |
+          mkdir output  # create output dir
+          # this will also include README.md
+          intro=$(printf "intro")
+          main=$(printf '"%s" ' C*.md)
+          outro=$(printf "outro")
+          echo $intro $main $outro > $GITHUB_OUTPUT
+
+      - uses: docker://pandoc/latex:3.1.1
+        with:
+          args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
+          
+      - uses: actions/upload-artifact@v3
+        with:
+          name: output
+          path: output
+  build_web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name create file list
+    id: files_list
+    run: |
+      mkdir output  # create output dir
+          # this will also include README.md
+      intro=$(printf "intro")
+      main=$(printf '"%s" ' C*.md)
+      outro=$(printf "outro")
+      echo $intro $main $outro > $GITHUB_OUTPUT
+
+    - uses: docker://pandoc/core:3.1.1
+       with:
+        args: >-
+          --output=output/index.html ${{steps.files_list.outputs.files }}
+
+  deploy:
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      runs-on: ubuntu-latest
+      needs: build_web
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v2
+
