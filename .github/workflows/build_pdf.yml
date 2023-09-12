@@ -12,11 +12,7 @@ jobs:
         id: files_list
         run: |
           mkdir output  # create output dir
-          # this will also include README.md
-          intro=$(printf "intro")
-          main=$(printf '"%s" ' C*.md)
-          outro=$(printf "outro")
-          echo $intro $main $outro > $GITHUB_OUTPUT
+          echo "files=$(printf '"%s" ' [0-9]*.md)" > $GITHUB_OUTPUT
 
       - uses: docker://pandoc/latex:3.1.1
         with:
