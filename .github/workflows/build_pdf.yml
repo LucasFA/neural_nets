@@ -36,9 +36,9 @@ jobs:
         id: files_list
         run: |
           mkdir output  # create output dir
-          intro="intro"
+          intro='"intro"'
           main=$(printf '"%s" ' C*.md)
-          outro="outro"
+          outro='"outro"'
           full=$(printf $intro && printf $main && printf $outro)
           echo $intro $main $outro > $GITHUB_OUTPUT
 
