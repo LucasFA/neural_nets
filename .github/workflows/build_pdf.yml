@@ -36,8 +36,8 @@ jobs:
         id: files_list
         run: |
           mkdir output  # create output dir
-          files=$(printf '"%s" ' [0-9]*.md)
-          echo $files > $GITHUB_OUTPUT
+          echo "files=$(printf '"%s" ' [0-9]*.md)" > $GITHUB_OUTPUT
+          
 
       - uses: docker://pandoc/core:3.1.1
         with:
