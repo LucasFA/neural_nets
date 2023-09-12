@@ -36,11 +36,8 @@ jobs:
         id: files_list
         run: |
           mkdir output  # create output dir
-          intro='"intro" '
-          main=$(printf '"%s" ' C*.md)
-          outro='"outro"'
-          full=$(printf $intro && printf $main && printf $outro)
-          echo $full > $GITHUB_OUTPUT
+          files=$(printf '"%s" ' [0-9]*.md)
+          echo $files > $GITHUB_OUTPUT
 
       - uses: docker://pandoc/core:3.1.1
         with:
