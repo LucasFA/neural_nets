@@ -32,20 +32,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name create file list
-    id: files_list
-    run: |
-      mkdir output  # create output dir
-          # this will also include README.md
-      intro=$(printf "intro")
-      main=$(printf '"%s" ' C*.md)
-      outro=$(printf "outro")
-      echo $intro $main $outro > $GITHUB_OUTPUT
+      - name: create file list
+        id: files_list
+        run: |
+          mkdir output  # create output dir
+          intro=$(printf "intro")
+          main=$(printf '"%s" ' C*.md)
+          outro=$(printf "outro")
+          echo $intro $main $outro > $GITHUB_OUTPUT
 
-    - uses: docker://pandoc/core:3.1.1
-       with:
-        args: >-
-          --output=output/index.html ${{steps.files_list.outputs.files }}
+      - uses: docker://pandoc/core:3.1.1
+        with:
+          args: >-
+            --output=output/index.html ${{steps.files_list.outputs.files }}
 
   deploy:
       environment:
