@@ -21,7 +21,7 @@ jobs:
       - uses: docker://pandoc/latex:3.1.1
         with:
           args: --output=output/result.pdf ${{ steps.files_list.outputs.files }}
-          
+ 
       - uses: actions/upload-artifact@v3
         with:
           name: output
