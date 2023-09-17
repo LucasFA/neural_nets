@@ -41,8 +41,6 @@ En tal caso, $A(x) = \sum_i w_i x_i + b$ y $\sigma(x) = \max(0, x)$.
 
 
 
-
-
 <!--  -->
 
 
