@@ -38,6 +38,11 @@ jobs:
         with:
           args: >-
             --output=output/index.html ${{steps.files_list.outputs.files }}
+      
+      - uses: actions/upload-artifact@v3
+        with:
+          name: output
+          path: output
 
   deploy:
       environment:
