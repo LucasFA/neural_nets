@@ -1,0 +1,65 @@
+name: Publicar a Github Pages
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  check-files:
+    name: Check if .md have been updated
+    runs-on: ubuntu-latest
+
+    outputs:
+      updated: ${{ steps.out.outputs.updated }}
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v14.1
+
+      - name: Set output
+        id: out
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file"
+            if  [[   "$file" == *docs/chapters/*md*
+                  || "$file" == *docs/chapters/*.bib*
+                  ||  "$file" == *docs/Makefile*
+                  ||  "$file" == *docs/headers/*.md ]]; then
+
+              echo '::set-output name=updated::true'
+            fi
+          done
+
+
+  build-web:
+    name: Construir la web
+
+    needs: check-files
+    if: ${{ needs.check-files.outputs.updated }}
+
+    runs-on: ubuntu-latest
+    container: asmilex/raytracing
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Compile web documentation
+        run: |
+          cd docs
+          make PANDOC_EXEC=pandoc web
+          sed -i 's/<img/<img loading="lazy"/' index.html
+
+      - name: Commit and push index.html
+        run: |
+          git config --global --add safe.directory /__w/Raytracing/Raytracing
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "[:robot:] Actualizado github-pages"
+          git push
