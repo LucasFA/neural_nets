@@ -39,7 +39,6 @@ En tal caso, $A(x) = \sum_i w_i x_i + b$ y $\sigma(x) = \max(0, x)$.
 # Estadística bayesiana
 
 
-
 Caso usual de redes neuronales:
 $X = \mathbb{R}^n, Y = \mathbb{R}^m, \mathbb{K} = \mathbb{R}$
 - $A: X \to Y$ es una aplicación afín.
