@@ -35,16 +35,9 @@ jobs:
 
   build-web:
     name: Construir la web
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
  
     needs: check-files
     if: ${{ needs.check-files.outputs.updated }}
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
 
     runs-on: ubuntu-latest
     container: asmilex/raytracing
@@ -59,11 +52,24 @@ jobs:
           make PANDOC_EXEC=pandoc web
           sed -i 's/<img/<img loading="lazy"/' index.html
       
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-pages-artifact@v2
         with:
           name: Página web
           path: ./docs/index.html
       
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build-web    
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2   
+        uses: actions/deploy-pages@v2
