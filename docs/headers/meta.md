@@ -10,6 +10,7 @@ header-includes: |
 fignos-caption-name: "Figura"
 tablenos-caption-name: "Tabla"
 tablenos-number-by-section: true
+book: false
 ---
 
 # Sinopsis{.unnumbered}

@@ -23,8 +23,12 @@ jobs:
           cd docs
           make PANDOC_EXEC=pandoc pdf
 
-      - uses: actions/upload-pages-artifact@v2
+      - name: Release pdf
+        uses: softprops/action-gh-release@v1
         with:
-          name: pdf
-          path: ./docs/TFG.pdf
- 
+          files: ./docs/TFG.pdf
+
+      # - uses: actions/upload-pages-artifact@v2
+      #   with:
+      #     name: pdf
+      #     path: ./docs/TFG.pdf
