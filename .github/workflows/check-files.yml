@@ -2,6 +2,10 @@ name: Called reusable workflow
 
 on:
   workflow_call:
+    outputs:
+      updated:
+        description: "Whether some file changed"
+        value: ${{ jobs.check-files.outputs.updated}}
 
 jobs:
   check-files:
