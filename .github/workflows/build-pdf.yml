@@ -1,0 +1,30 @@
+name: construir pdf
+on: 
+  workflow_dispatch:
+  schedule: 
+    - cron: '00 05 * * *'
+
+
+jobs:
+  # check-files:
+    # uses: ./.github/workflows/check-files.yml
+  build-pdf:
+    name: Construir el PDF
+
+    runs-on: ubuntu-latest
+    container: asmilex/raytracing
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Compile pdf documentation
+        run: |
+          cd docs
+          make PANDOC_EXEC=pandoc pdf
+
+      - uses: actions/upload-pages-artifact@v2
+        with:
+          name: pdf
+          path: ./docs/TFG.pdf
+ 
