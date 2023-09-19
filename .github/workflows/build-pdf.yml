@@ -34,9 +34,10 @@ jobs:
 
       - name: Create tag
         if: success()
-        run: |
-          git tag ${{ env.tag_name}}
-          git tag push ${{ env.tag_name}}
+        uses: rickstaa/action-create-tag@v1
+        id: "create_tag"
+        with:
+          tag: ${{ env.tag_name }}
 
       - name: Create release with pdf
         if: success()
