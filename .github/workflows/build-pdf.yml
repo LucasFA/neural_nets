@@ -35,8 +35,8 @@ jobs:
       - name: Create tag
         if: success()
         run: |
-          git tag "$TAG_NAME"
-          git tag push "$TAG_NAME"
+          git tag $TAG_NAME
+          git tag push $TAG_NAME
 
       - name: Create release with pdf
         if: success()
