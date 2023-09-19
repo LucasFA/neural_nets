@@ -26,10 +26,10 @@ jobs:
         run: |
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             # Manual trigger
-            echo "TAG_NAME=manual-$(date -u +'%Y-%m-%d-%H-%M')" >> $GITHUB_OUTPUT
+            echo "TAG_NAME=manual-$(date -u +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
           else
             # Cron job trigger
-            echo "TAG_NAME=nightly-$(date -u +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+            echo "TAG_NAME=nightly-$(date -u +'%Y-%m-%d')" >> $GITHUB_ENV
           fi
 
       - name: Create tag
