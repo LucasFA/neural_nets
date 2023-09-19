@@ -1,4 +1,4 @@
-name: construir pdf
+name: construir_pdf
 on: 
   workflow_dispatch:
   schedule: 
@@ -6,8 +6,6 @@ on:
 
 
 jobs:
-  # check-files:
-    # uses: ./.github/workflows/check-files.yml
   build-pdf:
     name: Construir el PDF
 
@@ -22,11 +20,31 @@ jobs:
         run: |
           cd docs
           make PANDOC_EXEC=pandoc pdf
+      
+      - name: Set Tag Name
+        id: set-tag-name
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            # Manual trigger
+            echo "TAG_NAME=manual-$(date -u +'%Y-%m-%d-%H-%M')" >> $GITHUB_OUTPUT
+          else
+            # Cron job trigger
+            echo "TAG_NAME=nightly-$(date -u +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          fi
 
-      - name: Release pdf
+      - name: Create tag
+        if: success()
+        run: |
+          git tag "$TAG_NAME"
+          git tag push "$TAG_NAME"
+
+      - name: Create release with pdf
+        if: success()
         uses: softprops/action-gh-release@v1
         with:
           files: ./docs/TFG.pdf
+          tag_name: "$TAG_NAME"
+          body: "Release new pdf"
 
       # - uses: actions/upload-pages-artifact@v2
       #   with:
