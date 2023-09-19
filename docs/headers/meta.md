@@ -10,11 +10,14 @@ header-includes: |
 fignos-caption-name: "Figura"
 tablenos-caption-name: "Tabla"
 tablenos-number-by-section: true
-book: false
 ---
 
 # Sinopsis{.unnumbered}
+Lorem ipsum dolor sit amet and so on
 
 # A brief overview{.unnumbered}
 
+Lorem ipsum dolor sit amet and so on
+Lorem ipsum dolor sit amet and so on
+Lorem ipsum dolor sit amet and so on
 <!-- LTeX: language=en -->
