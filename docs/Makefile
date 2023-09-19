@@ -43,7 +43,7 @@ PANDOC_FLAGS =\
 	--csl ./headers/chicago-alt.csl \
 	--bibliography ./chapters/bibliography.bib
 
-PANDOC_FLAGS_PDF = --template ./headers/eisvogel.tex
+PANDOC_FLAGS_PDF = --template eisvogel
 PANDOC_FLAGS_WEB =\
 	--standalone \
 	--toc \
