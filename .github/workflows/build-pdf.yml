@@ -33,20 +33,21 @@ jobs:
           fi
           echo $TAG_NAME
           echo "$TAG_NAME"
+          echo ${{ env.TAG_NAME}}
 
       - name: Create tag
         if: success()
         uses: rickstaa/action-create-tag@v1
         id: "create_tag"
         with:
-          tag: ${{ env.tag_name }}
+          tag: ${{ env.TAG_NAME}}
 
       - name: Create release with pdf
         if: success()
         uses: softprops/action-gh-release@v1
         with:
           files: ./docs/TFG.pdf
-          tag_name: ${{ env.tag_name }}
+          tag_name: ${{ env.TAG_NAME}}
           body: "Release new pdf"
 
       # - uses: actions/upload-pages-artifact@v2
