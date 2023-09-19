@@ -1,8 +1,3 @@
-??? === WTF
-
-- Redes neuronales
-- Estadística bayesiana
-
 # Redes neuronales
 
 Def neuronas artificiales:
@@ -26,7 +21,6 @@ Egs:
 - Sigmoide: $f(x) = \frac{1}{1 + e^{-x}}$
 
 
-g
 Ejemplos de neuronas:
 - El perceptrón: 
 $$
