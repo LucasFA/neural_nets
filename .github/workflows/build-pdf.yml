@@ -31,6 +31,8 @@ jobs:
             # Cron job trigger
             echo "TAG_NAME=nightly-$(date -u +'%Y-%m-%d')" >> $GITHUB_ENV
           fi
+          echo $TAG_NAME
+          echo "$TAG_NAME"
 
       - name: Create tag
         if: success()
