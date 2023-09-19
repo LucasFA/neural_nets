@@ -43,7 +43,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: ./docs/TFG.pdf
-          tag_name: "$TAG_NAME"
+          tag_name: ${{ env.tag_name }}
           body: "Release new pdf"
 
       # - uses: actions/upload-pages-artifact@v2
