@@ -15,11 +15,11 @@ monofontoptions:
  - Scale=0.8
 
 titlepage: true
-subtitle: "Doble grado en ingeniería informática y matemáticas \\ \\href{https://github.com/asmilex/Raytracing/}{github.com/asmilex/Raytracing/}"
+subtitle: "Grado en matemáticas \\ \\href{https://github.com/LucasFA/neural-nets/}{github.com/LucasFA/neural-nets/}"
 institute: "Universidad de Granada"
 author:
-- "\\textbf{Presentado por}: Andrés Millán Muñoz,"
-- "\\textbf{Tutorizado por}: Carlos Ureña Almagro, María del Carmen Segovia García"
+- "\\textbf{Presentado por}: Lucas Fehlau Arbulu,"
+- "\\textbf{Tutorizado por}: Julían Luengo" # TODO
 #logo: ./img/ugr.png
 logo-width: 100mm
 titlepage-rule-height: 0
