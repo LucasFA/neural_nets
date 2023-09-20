@@ -31,21 +31,14 @@ jobs:
         run: |
           echo "TAG_NAME=manual-$(date -u +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
 
-      - name: Set Tag Name
-        id: set-tag-name
+      - name: Set TAG_NAME 2
+        if: ! ${{ github.event_name == 'workflow_dispatch' }}
         run: |
-          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
-            # Manual trigger
-            echo "Manual case"
-            echo "TAG_NAME=manual-$(date -u +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
-          else
-            # Cron job trigger
-            echo "Cron case"
-            echo "TAG_NAME=nightly-$(date -u +'%Y-%m-%d')" >> $GITHUB_ENV
-          fi
-          echo $TAG_NAME
-          echo "$TAG_NAME"
-          echo ${{ env.TAG_NAME}}
+          echo "TAG_NAME=nightly-$(date -u +'%Y-%m-%d-%H-M')" >> $GITHUB_ENV
+
+      - name: debug 
+        run: !
+          echo ${{ env.TAG_NAME }}
 
       - name: Create tag
         if: success()
