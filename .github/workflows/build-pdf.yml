@@ -25,21 +25,10 @@ jobs:
         run: |
           cd docs
           make PANDOC_EXEC=pandoc pdf
-      
-          
-      - name: Set TAG_NAME 2
-        if: "! ${{ github.event_name == 'workflow_dispatch' }}"
-        run: |
-          echo "TAG_NAME=nightly-$(date -u +'%Y-%m-%d-%H-M')" >> $GITHUB_ENV
 
       - name: Set TAG_NAME
-        if: github.event_name == 'workflow_dispatch'
         run: |
-          echo "TAG_NAME=manual-$(date -u +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
-
-      - name: debug 
-        run: |
-          echo ${{ env.TAG_NAME }}
+          echo "TAG_NAME=$(date -u +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
 
       - name: Create tag
         if: success()
