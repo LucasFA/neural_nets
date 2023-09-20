@@ -16,19 +16,31 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Enable Debug Logging
+        env:
+          ACTIONS_RUNNER_DEBUG: true
+        run: echo "Debug logging is enabled"
+
       - name: Compile pdf documentation
         run: |
           cd docs
           make PANDOC_EXEC=pandoc pdf
       
+      - name: Set TAG_NAME
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "TAG_NAME=manual-$(date -u +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
+
       - name: Set Tag Name
         id: set-tag-name
         run: |
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             # Manual trigger
+            echo "Manual case"
             echo "TAG_NAME=manual-$(date -u +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
           else
             # Cron job trigger
+            echo "Cron case"
             echo "TAG_NAME=nightly-$(date -u +'%Y-%m-%d')" >> $GITHUB_ENV
           fi
           echo $TAG_NAME
@@ -47,7 +59,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: ./docs/TFG.pdf
-          tag_name: ${{ env.TAG_NAME}}
+          tag_name: ${{ env.TAG_NAME }}
           body: "Release new pdf"
 
       # - uses: actions/upload-pages-artifact@v2
