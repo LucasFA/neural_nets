@@ -39,3 +39,8 @@ $X = \mathbb{R}^n, Y = \mathbb{R}^m, \mathbb{K} = \mathbb{R}$
 - $A: X \to Y$ es una aplicación afín.
 - $\sigma: Y \to \mathbb{R}$ es una función de activación.
 
+
+
+Multilayer feedforward networks with a nonpolynomial activation function can approximate any function
+https://www.sciencedirect.com/science/article/pii/S0893608005801315
+
