@@ -37,7 +37,7 @@ jobs:
           echo "TAG_NAME=nightly-$(date -u +'%Y-%m-%d-%H-M')" >> $GITHUB_ENV
 
       - name: debug 
-        run: !
+        run: |
           echo ${{ env.TAG_NAME }}
 
       - name: Create tag
