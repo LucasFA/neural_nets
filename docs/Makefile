@@ -40,7 +40,7 @@ PANDOC_FLAGS =\
 	--filter pandoc-fignos \
 	--filter pandoc-tablenos \
 	--citeproc \
-	--csl ./headers/chicago-alt.csl \
+	--csl ./headers/ugrTFG.csl \
 	--bibliography ./chapters/bibliography.bib
 
 PANDOC_FLAGS_PDF = --template ./headers/eisvogel.tex
