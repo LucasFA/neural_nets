@@ -43,7 +43,10 @@ Bajo condiciones débiles sobre la función de activación hay varios resultados
 ## Activación
 ### Condiciones sobre la función de activación
 <!-- TODO: -->
-<!-- todo esto es redundante teniendo los resultados de convergencia -->
+Además de los resultados de convergencia hay otras consideraciones a tener en cuenta, como el desvanecimiento o explosión de gradientes. 
+<!-- https://en.wikipedia.org/wiki/Activation_function -->
+
+<!-- todo esto ya es redundante teniendo los resultados de convergencia -->
 dónde poner lo de las activaciones no polinomiales - que bastan para aproximar cualquier función continua. Imagino en el apartado de convergence theorems.
 
 #### Observación: función de activación lineal/polinómica.
