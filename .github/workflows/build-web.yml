@@ -1,5 +1,6 @@
 name: Publicar a Github Pages
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'main'
@@ -11,7 +12,7 @@ jobs:
     name: Construir la web
 
     needs: check-files
-    if: ${{ needs.check-files.outputs.updated }}
+    if: ${{ needs.check-files.outputs.updated }} || ${{ github.event_name == 'workflow_dispatch' }}
 
     runs-on: ubuntu-latest
     container: asmilex/raytracing
