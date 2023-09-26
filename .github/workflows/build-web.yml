@@ -25,7 +25,10 @@ jobs:
         run: |
           cd docs
           make PANDOC_EXEC=pandoc web
-
+          sed -i 's/<img/<img loading="lazy"/' index.html
+          mkdir output
+          mv index.html ./output/index.html
+      
       - uses: actions/upload-pages-artifact@v2
         with:
           name: github-pages

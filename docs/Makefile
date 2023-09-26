@@ -76,10 +76,6 @@ web: $(SOURCES) $(SOURCES_WEB)
 	$(info Compilando $(TARGET_WEB).html...)
 	$(PANDOC_EXEC) $(PANDOC_FLAGS) $(PANDOC_FLAGS_WEB) $(LATEX_FLAGS) -o $(TARGET_WEB).html $(SOURCES) $(SOURCES_WEB)
 	$(info Terminado.)
-	$(info Aplicando optimización de lazy loading:)
-    bash -c "sed -i 's/<img/<img loading="lazy"/' index.html"
-    bash -c "mkdir output"
-    bash -c "mv index.html ./output/index.html"
 
 clean:
 	rm -f *.aux *.log *.nav *.out *.snm *.toc *.vrb tags || true
