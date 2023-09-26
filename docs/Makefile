@@ -27,7 +27,7 @@ TARGET_PDF = TFG
 TARGET_WEB = index
 
 SOURCES = ./headers/meta.md ./headers/math.md
-SOURCES += $(shell find . -wholename './chapters/*.md' | sort | awk -F'\0' '{print $2}')
+SOURCES += $(shell find . -wholename './chapters/*.tex' | sort | awk -F'\0' '{print $2}')
 
 SOURCES_WEB = ./headers/web.md
 SOURCES_PDF = ./headers/pdf.md
@@ -43,7 +43,8 @@ PANDOC_FLAGS =\
 	--csl ./headers/ugrTFG.csl \
 	--bibliography ./chapters/bibliography.bib
 
-PANDOC_FLAGS_PDF = --template ./headers/eisvogel.tex
+PANDOC_FLAGS_PDF =\
+#  --template ./headers/eisvogel.tex
 PANDOC_FLAGS_WEB =\
 	--standalone \
 	--toc \
