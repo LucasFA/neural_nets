@@ -1,3 +1,5 @@
+\newcommand{\vect}{\ensuremath{\mathbf{#1}}} 
+
 \newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
 \newcommand*\abs[1]{\left\lvert #1 \right\rvert}
 \newcommand*\norm[1]{\left\lVert #1 \right\rVert}
