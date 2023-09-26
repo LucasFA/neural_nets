@@ -9,15 +9,15 @@ Dado un espacio vectorial con un producto escalar, $(V, \langle , \rangle)$ sobr
 
 ### Ejemplo
 
-El caso usual es $V = \mathbb{R}^n$ y $\mathbb{K} = \mathbb{R}$, onde la neurona se escribe como $f(\vect x) = \sigma(\vect w \cdot x + b)$, donde $\vect w \in \mathbb{R}^n$, $b \in \mathbb{R}$ y $\sigma: \mathbb{R} \to \mathbb{R}$. 
+El caso usual es $V = \mathbb{R}^n$ y $\mathbb{K} = \mathbb{R}$, donde la neurona se escribe como $f(\vect x) = \sigma(\vect w \cdot x + b)$, donde $\vect w \in \mathbb{R}^n$, $b \in \mathbb{R}$ y $\sigma: \mathbb{R} \to \mathbb{R}$. 
 
 
 ## Capa neuronal
 
 Dada una función sigma, una capa neuronal es una función $C: \mathbb{R}^N \to \mathbb{R}^p$ determinada por una familia de $p$ neuronas $\{n_j\}_{j=1,...,p}$ con la misma función de activación, de forma que 
-$$
-    C(\vect{x}) = \sigma(W \vect{x} + \vect{b})
-$$
+
+$$C(\vect{x}) = \sigma(W \vect{x} + \vect{b})$$
+
 donde:
 - $W \in \mathbb{R}^{p \times N}$ es la matriz de pesos, donde cada fila $W_i$ es el vector de pesos de la neurona $n_j$,
 - $\vect{b} \in \mathbb{R}^p$ es el vector de sesgos de las neuronas.
@@ -41,6 +41,8 @@ Bajo condiciones débiles sobre la función de activación hay varios resultados
 - Se puede aproximar cualquier función continua con una red neuronal con una única capa oculta y una función de activación no polinómica.
 
 ## Activación
+Clásicamente se ha requerido que la función de activación sea acotada (y por tanto saturante, lim \grad = 0), pero en la práctica se usan funciones de activación no acotadas como la ReLU (Rectified Linear Unit)
+Por tanto nos atenemos a la mayor generalidad posible.
 ### Condiciones sobre la función de activación
 <!-- TODO: -->
 Además de los resultados de convergencia hay otras consideraciones a tener en cuenta, como el desvanecimiento o explosión de gradientes. 
@@ -64,7 +66,17 @@ Numeric analysis observation: gotta be careful with vanishing/exploding gradient
 
 ## Convergence theorems for neural networks
 
-### Universal approximation theorem
+### Universal approximation theorem    
+https://web.njit.edu/~usman/courses/cs675_fall18/10.1.1.441.7873.pdf
+Cybenko ^
+https://www.sciencedirect.com/science/article/pii/089360809190009T
+Hornik ^ ->
+abstract:
+single hidden layer, arbitrary but bounded activation and non-consttant function are universal approximators in L^p(\mu)
+if the activation function is continuos, bounded an non-constant, 
+
+\prop{Universal approximation theorem}
+Let $\sigma$ be a non-polynomial activation function. Then, given any continuous function $f: [0,1]^n \to \mathbb{R}$ and any $\epsilon > 0$, there exists a neural network $N$ with a single hidden layer with $n$ neurons and activation function $\sigma$ such that
 
 ### Arbitrary width
 
