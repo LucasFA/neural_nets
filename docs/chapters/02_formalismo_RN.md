@@ -1,25 +1,26 @@
 # Redes neuronales
 
 ## Neurona
-<!-- TODO: técnicamente por eso sería prehilbertiano -->
+<!-- TODO: técnicamente por eso sería prehilbertiano. O euclídeo? -->
 Dado un espacio vectorial con un producto escalar, $(V, \langle , \rangle)$ sobre un cuerpo $\mathbb{K}$, una neurona es una función $f_\sigma: V \to \mathbb{K}$ que se escriba como $f_sigma(\vect{x}) = \sigma(\langle \vect w, \vect x\rangle + b)$, donde:
 - $\vect w \in V$,
 - $b \in \mathbb{K}$,
 - $\sigma: \mathbb{K} \to \mathbb{K}$, que llamaremos función de activación y de la cual exigiremos ciertas condiciones.
 
-### Ejemplo
+### Ejemplos
 
 El caso usual es $V = \mathbb{R}^n$ y $\mathbb{K} = \mathbb{R}$, donde la neurona se escribe como $f(\vect x) = \sigma(\vect w \cdot x + b)$, donde $\vect w \in \mathbb{R}^n$, $b \in \mathbb{R}$ y $\sigma: \mathbb{R} \to \mathbb{R}$. 
 
+Un ejemplo particular es $\sigma$ la función Heaviside de paso -> perceptrón de Rosenblatt.
 
 ## Capa neuronal
-
-Dada una función sigma, una capa neuronal es una función $C: \mathbb{R}^N \to \mathbb{R}^p$ determinada por una familia de $p$ neuronas $\{n_j\}_{j=1,...,p}$ con la misma función de activación, de forma que 
+Dada una función $\sigma$, una capa neuronal es una función $C: \mathbb{R}^N \to \mathbb{R}^p$ determinada por una familia de $p$ neuronas $\{n_j\}_{j=1,...,p}$ con la misma función de activación, de forma que 
 
 $$C(\vect{x}) = \sigma(W \vect{x} + \vect{b})$$
 
 donde:
-- $W \in \mathbb{R}^{p \times N}$ es la matriz de pesos, donde cada fila $W_i$ es el vector de pesos de la neurona $n_j$,
+
+- $W \in \mathbb{R}^{p \times N}$ es la matriz de pesos, donde cada fila $W_i$ es el vector de pesos de la neurona $n_i$,
 - $\vect{b} \in \mathbb{R}^p$ es el vector de sesgos de las neuronas.
 
 ## Red neuronal
@@ -36,7 +37,7 @@ No hemos restringido el número de neuronas de las capas ocultas.
 
 
 ## Teoremas de convergencia
-Bajo condiciones débiles sobre la función de activación hay varios resultados sobre la convergencia de las redes neuronales tomando el límite en número de capas o número de neuronas por capa. 
+Bajo condiciones débiles sobre la función de activación hay varios resultados sobre la convergencia de las redes neuronales tomando el límite en número de capas o número de neuronas por capa a infinito. 
 <!-- Número de capas y número de neuronas por capa acotado también había algo -->
 - Se puede aproximar cualquier función continua con una red neuronal con una única capa oculta y una función de activación no polinómica.
 
