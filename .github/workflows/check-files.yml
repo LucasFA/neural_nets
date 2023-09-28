@@ -31,7 +31,9 @@ jobs:
             if  [[   "$file" == *docs/chapters/*md*
                   || "$file" == *docs/chapters/*.bib*
                   ||  "$file" == *docs/Makefile*
-                  ||  "$file" == *docs/headers/*.md ]]; then
+                  ||  "$file" == *docs/headers/*.md
+                  ||  "$file" == */Makefile 
+               ]]; then
 
               echo "updated=true" >> $GITHUB_OUTPUT
             fi
