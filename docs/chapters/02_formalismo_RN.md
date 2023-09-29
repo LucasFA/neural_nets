@@ -74,41 +74,23 @@ $$
 
 A las capas $C_l$ con $l \in \{1,...,L - 1\}$ se les llama capas ocultas, mientras que a la capa $C_L$ se le llama capa de salida.
 
+Naturalmente, la composición exige que el espacio de salida de una capa coincida con el espacio de entrada de la siguiente, la capa $C_1$ debe tener tantas entradas como $f$, y la capa de salida $C_l$ debe tener $p$ salidas, como $f$.
+
 ### Nota
 No hemos restringido el número de neuronas de las capas ocultas.
-
-
-## Teoremas de convergencia
-Bajo condiciones débiles sobre la función de activación hay varios resultados sobre la convergencia de las redes neuronales tomando el límite en número de capas o número de neuronas por capa a infinito. 
-<!-- Número de capas y número de neuronas por capa acotado también había algo -->
-- Se puede aproximar cualquier función continua con una red neuronal con una única capa oculta y una función de activación no polinómica.
-
-## Activación
-Clásicamente se ha requerido que la función de activación sea acotada (y por tanto saturante, lim \grad = 0), pero en la práctica se usan funciones de activación no acotadas como la ReLU (Rectified Linear Unit)
-Por tanto nos atenemos a la mayor generalidad posible.
-
-### Condiciones sobre la función de activación
-<!-- TODO: -->
-Además de los resultados de convergencia hay otras consideraciones a tener en cuenta, como el desvanecimiento o explosión de gradientes. 
-<!-- https://en.wikipedia.org/wiki/Activation_function -->
-
-<!-- todo esto ya es redundante teniendo los resultados de convergencia -->
-dónde poner lo de las activaciones no polinomiales - que bastan para aproximar cualquier función continua. Imagino en el apartado de convergence theorems.
 
 #### Observación: función de activación lineal/polinómica.
 Resultado: una red neuronal con función de activación lineal/polinómica es equivalente a ... (algo mucho más simple TODO). En el caso lineal o afín la RN se convierte en una recta ella misma. En el caso polinómico, en un polinomio, que con profundidad infinita puede aproximar cualquier función continua... A leer el paper de non-polynomial activation functions <=> learns anything
 
-Numeric analysis observation: gotta be careful with vanishing/exploding gradients (unbounded derivatives)
+## Entrenamiento
 
+Vemos Backpropagation, o al menos lo necesario para los teoremas de convergencia. En algún momento sí creo estaría bien tratar SGD.
+## Teoremas de convergencia
+Bajo condiciones débiles sobre la función de activación hay varios resultados sobre la convergencia de las redes neuronales tomando el límite en número de capas o número de neuronas por capa a infinito. 
+<!-- Número de capas y número de neuronas por capa acotado también había algo -->
+- Se puede aproximar cualquier función continua con una red neuronal con una única capa oculta y una función de activación no polinómica.
+- Se puede aproximar cualquier función continua con una red neuronal con ...
 
-
-## Backpropagation
-
-## Gradient descent (?)
-### Stochastic Gradient Descent
-<!-- esta última probablemente en otro apartado posterior? -->
-
-## Convergence theorems for neural networks
 
 ### Universal approximation theorem    
 https://web.njit.edu/~usman/courses/cs675_fall18/10.1.1.441.7873.pdf
@@ -126,4 +108,27 @@ Let $\sigma$ be a non-polynomial activation function. Then, given any continuous
 
 ### Arbitrary depth
 
+
+## Activación
+Clásicamente se ha requerido que la función de activación sea acotada (y por tanto saturante, lim \grad = 0), pero en la práctica también se usan funciones de activación no acotadas como la ReLU (Rectified Linear Unit). Al mismo tiempo, ya observamos de los resultados de convergencia que según el contexto no es necesario.
+ <!--  TODO: bueno, hay un resultado en el que se requiere que la función de activación esté acotada, pero bueno-->
+Por tanto nos atenemos a la mayor generalidad posible.
+
+### Condiciones sobre la función de activación
+<!-- TODO: -->
+Además de los resultados de convergencia hay otras consideraciones a tener en cuenta, como el desvanecimiento o explosión de gradientes. 
+<!-- https://en.wikipedia.org/wiki/Activation_function -->
+
+<!-- todo esto ya es redundante teniendo los resultados de convergencia -->
+dónde poner lo de las activaciones no polinomiales - que bastan para aproximar cualquier función continua. Imagino en el apartado de convergence theorems.
+
+Numeric analysis observation: gotta be careful with vanishing/exploding gradients (unbounded derivatives)
+
+
+
+## Backpropagation
+
+## Gradient descent (?)
+### Stochastic Gradient Descent
+<!-- esta última probablemente en otro apartado posterior? -->
 <!-- TODO: unir estos? -->
