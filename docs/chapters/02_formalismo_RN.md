@@ -1,9 +1,8 @@
 #### Nota previa
 <!-- TODO: mover esto a un apartado previo -->
 Usaremos la siguiente notación para indicar un vector $v$ de longitud $n$:
-$$
-    \left\( v_i \right\)_{i = 1, ..., n}
-$$
+
+$$\left( v_i \right)_{i = 1, ..., n}$$
 
 # Redes neuronales
 
@@ -37,13 +36,13 @@ Dada una familia de neuronas $\{N_\lambda \}_{\lambda \in \Lambda}$ con funcione
 
 $$C(\vect{x}; \lambda) = N_\lambda(\vect x)$$
 
-En particular, para una familia finita de tamaño $n$, ${N_\lambda\}_{\lambda = 1, ..., n}$ utilizaremos la siguiente notación:
+En particular, para una familia finita de tamaño $n$, $N_{\lambda = 1, ..., n}$ utilizaremos la siguiente notación:
 
-$$ C(\vect x) = \left\( N_\lambda(\vect x) \right\)_{\lambda = 1, ..., n} $$
+$$ C(\vect x) = \left( N_\lambda(\vect x) \right)_{\lambda = 1, ..., n} $$
 
 de forma que una capa se puede expresar de la siguiente forma:
 $$ 
-    C(\vect x) = \left\( \sigma_\lambda (\langle \vect w_\lambda, \vect x \rangle + b_\lambda ) \right\)_{\lambda = 1, ..., n} 
+    C(\vect x) = \left( \sigma_\lambda (\langle \vect w_\lambda, \vect x \rangle + b_\lambda ) \right)_{\lambda = 1, ..., n} 
 $$
 
 donde $w_\lambda$ y $b_\lambda$ son los pesos y sesgo de la neurona $N_\lambda$, respectivamente.
@@ -51,9 +50,8 @@ donde $w_\lambda$ y $b_\lambda$ son los pesos y sesgo de la neurona $N_\lambda$,
 ### Ejemplo
 
 Trabajando en $V = $\R^n$, con $\mathbb{B} = \R$, un conjunto de neuronas finito $\{N_i\}_{i = 1, ..., p}$, con $N_i(\vect x) = \sigma(\vect \cdot \vect x + b) tenemos que
-
 $$
-C(\vect x) = \left\(\sigma(\vect w \cdot \vect x + b) \right\)_{i = 1, ..., p}
+C(\vect x) = \left(\sigma(\vect w \cdot \vect x + b) \right)_{i = 1, ..., p}
 $$
 <!-- Dado un espacio vectorial con un producto escalar $(V, \langle , \rangle)$, sobre un cuerpo $\mathbb{K}$, una capa neuronal es una función $C: V \to \mathbb K$ determinada por una familia $\{n_\lambda \}_{\lambda \in \Lambda} con la misma función de activación, de forma que si -->
 
