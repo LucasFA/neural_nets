@@ -1,27 +1,71 @@
+#### Nota previa
+<!-- TODO: mover esto a un apartado previo -->
+Usaremos la siguiente notación para indicar un vector $v$ de longitud $n$:
+
+$$
+    \left\( v_i \right\)_{i = 1, ..., n}
+$$
+
 # Redes neuronales
 
 ## Neurona
-<!-- TODO: técnicamente por eso sería prehilbertiano. O euclídeo? -->
-Dado un espacio vectorial con un producto escalar, $(V, \langle , \rangle)$ sobre un cuerpo $\mathbb{K}$, una neurona es una función $f_\sigma: V \to \mathbb{K}$ que se escriba como $f_sigma(\vect{x}) = \sigma(\langle \vect w, \vect x\rangle + b)$, donde:
-- $\vect w \in V$,
-- $b \in \mathbb{K}$,
-- $\sigma: \mathbb{K} \to \mathbb{K}$, que llamaremos función de activación y de la cual exigiremos ciertas condiciones.
+<!-- reminder:
+espacio prehilbertiano = producto escalar.
+espacio de hilbert = espacio prehilbertiano completo.
+espacio euclídeo = espacio de hilbert de dimensión finita
+
+ie, el caso usual es el euclídeo 
+-->
+<!-- TODO: ver qué poner exactamente: euclídeo (finito) o Hilbert (caso general) -->
+En su máxima generalidad, dado un espacio vectorial con un producto escalar, $(V, \langle , \rangle)$ sobre un cuerpo $\mathbb{K}$, una neurona es una función $f_\sigma: V \to \mathbb{K}$ que se escriba como 
+$f_\sigma(\vect{x}) = \sigma(\langle \vect w, \vect x\rangle + b)$, 
+donde:
+
+- $\vect w \in V$, que llamaremos pesos de la neurona,
+- $b \in \mathbb{K}$, que llamaremos el sesgo de la neurona,
+- $\sigma: \mathbb{K} \to \mathbb{K}$, que llamaremos función de activación. 
 
 ### Ejemplos
 
-El caso usual es $V = \mathbb{R}^n$ y $\mathbb{K} = \mathbb{R}$, donde la neurona se escribe como $f(\vect x) = \sigma(\vect w \cdot x + b)$, donde $\vect w \in \mathbb{R}^n$, $b \in \mathbb{R}$ y $\sigma: \mathbb{R} \to \mathbb{R}$. 
+El caso usual es $V = \mathbb{R}^n$ y $\mathbb{K} = \mathbb{R}$, donde la neurona se escribe como $f(\vect x) = \sigma(\vect w \cdot \vect x + b)$, donde $\vect w \in \mathbb{R}^n$, $b \in \mathbb{R}$ y $\sigma: \mathbb{R} \to \mathbb{R}$. 
 
-Un ejemplo particular es $\sigma$ la función Heaviside de paso -> perceptrón de Rosenblatt.
+En particular, si $\sigma$ es la función de paso de Heaviside -> perceptrón de Rosenblatt.
 
 ## Capa neuronal
-Dada una función $\sigma$, una capa neuronal es una función $C: \mathbb{R}^N \to \mathbb{R}^p$ determinada por una familia de $p$ neuronas $\{n_j\}_{j=1,...,p}$ con la misma función de activación, de forma que 
+<!-- TODO: también lo de producto escalar/EV/EHilbertl
+-->
+Dada una familia de neuronas $\{N_\lambda \}_{\lambda \in \Lambda} con funciones de activación $\sigma_\lambda$, una capa neuronal es una función $C$ definida por:
 
-$$C(\vect{x}) = \sigma(W \vect{x} + \vect{b})$$
+$$C(\vect{x}; \lambda) = N_\lambda(\vect x)$$
+
+En particular, para una familia finita de tamaño $n$, ${N_\lambda\}_{\lambda = 1, ..., n}$ utilizaremos la siguiente notación:
+
+$$ C(\vect x) = \left\( N_\lambda(\vect x) \right\)_{\lambda = 1, ..., n}
+
+de forma que una capa se puede expresar de la siguiente forma:
+
+$$ 
+    C(\vect x) = \left\( \sigma_\lambda (\langle \vect w_\lambda, \vect x \rangle + b_\lambda ) \right\)_{\lambda = 1, ..., n} 
+$$
+
+donde $\w_lambda$ y $b_lambda$ son los pesos y sesgo de la neurona $N_\lambda$, respectivamente.
+
+### Ejemplo
+
+Trabajando en $V = $\R^n$, con $\mathbb{B} = \R$, un conjunto de neuronas finito $\{N_i\}_{i = 1, ..., p}$, con $N_i(\vect x) = \sigma(\vect \cdot \vect x + b) tenemos que
+
+$$
+    C(\vect x) = \left\(\sigma(\vect w \cdot \vect x + b) \right\)_{i = 1, ..., p}
+<!-- Dado un espacio vectorial con un producto escalar $(V, \langle , \rangle)$, sobre un cuerpo $\mathbb{K}$, una capa neuronal es una función $C: V \to \mathbb K$ determinada por una familia $\{n_\lambda \}_{\lambda \in \Lambda} con la misma función de activación, de forma que si -->
+
+<!--Dada una función de activación $\sigma$, una capa neuronal es una función $-->
+<!--$$C(\vect{x}) = \sigma(W \vect{x} + \vect{b})$$
 
 donde:
 
 - $W \in \mathbb{R}^{p \times N}$ es la matriz de pesos, donde cada fila $W_i$ es el vector de pesos de la neurona $n_i$,
 - $\vect{b} \in \mathbb{R}^p$ es el vector de sesgos de las neuronas.
+-->
 
 ## Red neuronal
 
