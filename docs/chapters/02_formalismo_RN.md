@@ -4,6 +4,7 @@ Usaremos la siguiente notación para indicar un vector $v$ de longitud $n$:
 
 $$\left( v_i \right)_{i = 1, ..., n}$$
 
+donde $v_i$ denota el $i$-ésimo valor de $v$.
 # Redes neuronales
 
 ## Neurona
@@ -16,7 +17,7 @@ ie, el caso usual es el euclídeo
 -->
 <!-- TODO: ver qué poner exactamente: euclídeo (finito) o Hilbert (caso general) -->
 En su máxima generalidad, dado un espacio vectorial con un producto escalar, $(V, \langle , \rangle)$ sobre un cuerpo $\mathbb{K}$, podemos definir una neurona como una función $f_\sigma: V \to \mathbb{K}$ que se escriba de la siguiente manera: 
-$f_\sigma(\vect{x}) = \sigma(\langle \vect w, \vect x\rangle + b)$, 
+$$f_\sigma(\vect{x}) = \sigma(\langle \vect w, \vect x\rangle + b)$$ 
 donde:
 
 - $\vect w \in V$, que llamaremos pesos de la neurona,
@@ -25,7 +26,7 @@ donde:
 
 ### Ejemplos
 
-El caso usual es $V = \mathbb{R}^n$ y $\mathbb{K} = \mathbb{R}$, donde la neurona se escribe como $f(\vect x) = \sigma(\vect w \cdot \vect x + b)$, donde $\vect w \in \mathbb{R}^n$, $b \in \mathbb{R}$ y $\sigma: \mathbb{R} \to \mathbb{R}$. 
+El caso usual es $V = \mathbb{R}^n$ y $\mathbb{K} = \mathbb{R}$, donde la neurona se escribe como $f(\vect x) = \sigma(\vect w \cdot \vect x + b)$, teniendo $\vect w \in \mathbb{R}^n$, $b \in \mathbb{R}$ y $\sigma: \mathbb{R} \to \mathbb{R}$. 
 
 En particular, si $\sigma$ es la función de paso de Heaviside -> perceptrón de Rosenblatt.
 
@@ -36,7 +37,7 @@ Dada una familia de neuronas $\{N_\lambda \}_{\lambda \in \Lambda}$ con funcione
 
 $$C(\vect{x}; \lambda) = N_\lambda(\vect x)$$
 
-En particular, para una familia finita de tamaño $n$, $N_{\lambda = 1, ..., n}$ utilizaremos la siguiente notación:
+En particular, para una familia finita de tamaño $n$, $\{N_\lambda\}_{\lambda = 1, ..., n}$ utilizaremos la siguiente notación:
 
 $$ C(\vect x) = \left( N_\lambda(\vect x) \right)_{\lambda = 1, ..., n} $$
 
@@ -49,9 +50,9 @@ donde $w_\lambda$ y $b_\lambda$ son los pesos y sesgo de la neurona $N_\lambda$,
 
 ### Ejemplo
 
-Trabajando en $V = $\R^n$, con $\mathbb{B} = \R$, un conjunto de neuronas finito $\{N_i\}_{i = 1, ..., p}$, con $N_i(\vect x) = \sigma(\vect \cdot \vect x + b) tenemos que
+Trabajando en $V = $\R^n$, con $\mathbb{K} = \R$, un conjunto de neuronas finito $\{N_i\}_{i = 1, ..., p}$, con $N_i(\vect x) = \sigma(\vect w_i \cdot \vect x + b_i)$ tenemos que
 $$
-C(\vect x) = \left(\sigma(\vect w \cdot \vect x + b) \right)_{i = 1, ..., p}
+C(\vect x) = \left(\sigma(\vect w_i \cdot \vect x + b_i) \right)_{i = 1, ..., p}
 $$
 <!-- Dado un espacio vectorial con un producto escalar $(V, \langle , \rangle)$, sobre un cuerpo $\mathbb{K}$, una capa neuronal es una función $C: V \to \mathbb K$ determinada por una familia $\{n_\lambda \}_{\lambda \in \Lambda} con la misma función de activación, de forma que si -->
 
