@@ -44,6 +44,7 @@ Bajo condiciones débiles sobre la función de activación hay varios resultados
 ## Activación
 Clásicamente se ha requerido que la función de activación sea acotada (y por tanto saturante, lim \grad = 0), pero en la práctica se usan funciones de activación no acotadas como la ReLU (Rectified Linear Unit)
 Por tanto nos atenemos a la mayor generalidad posible.
+
 ### Condiciones sobre la función de activación
 <!-- TODO: -->
 Además de los resultados de convergencia hay otras consideraciones a tener en cuenta, como el desvanecimiento o explosión de gradientes. 
