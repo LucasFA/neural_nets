@@ -3,7 +3,7 @@ docker start tfg
 docker cp ./docs/ tfg:/data/docs/
 
 docker exec -it --workdir /data/docs tfg sh -c "make web && make pdf"
-docker exec sh -c "mv /data/docs/index.html /data/outputs/index.html && mv /data/docs/tfg.PDF /data/outputs/tfg.PDF"
+docker exec tfg sh -c "mv /data/docs/index.html /data/outputs/index.html && mv /data/docs/tfg.pdf /data/outputs/tfg.pdf"
 
 rm -rf ./outputs/
 docker cp tfg:/data/outputs/ ./outputs/
