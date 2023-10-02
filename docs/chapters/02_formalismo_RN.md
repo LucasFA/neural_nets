@@ -24,14 +24,16 @@ donde:
 - $b \in \mathbb{K}$, que llamaremos el sesgo de la neurona,
 - $\sigma: \mathbb{K} \to \mathbb{K}$, que llamaremos función de activación. 
 
+En este trabajo nos centraremos en el caso en el que $V$ es un espacio euclídeo $\R^n$ y $K = \R$.
+
 ### Ejemplos
 
-El caso usual es $V = \mathbb{R}^n$ y $\mathbb{K} = \mathbb{R}$, donde la neurona se escribe como $f(\vect x) = \sigma(\vect w \cdot \vect x + b)$, teniendo $\vect w \in \mathbb{R}^n$, $b \in \mathbb{R}$ y $\sigma: \mathbb{R} \to \mathbb{R}$. 
+En el caso usual $V = \R^n$ y $\mathbb{K} = \R$, la neurona se escribe $f(\vect x) = \sigma(\vect w \cdot \vect x + b)$, teniendo $\vect w \in \R^n$, $b \in \R$ y $\sigma: \R \to \R$. 
 
-En particular, si $\sigma$ es la función de paso de Heaviside -> perceptrón de Rosenblatt.
+Si $\sigma$ es la función de paso de Heaviside -> perceptrón de Rosenblatt.
 
 ## Capa neuronal
-<!-- TODO: también lo de producto escalar/EV/EHilbertl
+<!-- TODO: también lo de docs/producto escalar/EV/EHilbertl
 -->
 Dada una familia de neuronas $\{N_\lambda \}_{\lambda \in \Lambda}$ con funciones de activación $\sigma_\lambda$, una capa neuronal es una función $C$ definida por:
 
@@ -61,13 +63,13 @@ $$
 
 donde:
 
-- $W \in \mathbb{R}^{p \times N}$ es la matriz de pesos, donde cada fila $W_i$ es el vector de pesos de la neurona $n_i$,
-- $\vect{b} \in \mathbb{R}^p$ es el vector de sesgos de las neuronas.
+- $W \in \R^{p \times N}$ es la matriz de pesos, donde cada fila $W_i$ es el vector de pesos de la neurona $n_i$,
+- $\vect{b} \in \R^p$ es el vector de sesgos de las neuronas.
 -->
 
 ## Red neuronal feedforward
 
-Dada una función de activación $\sigma$, una red neuronal feedforward es una composición de capas neuronales con la misma función de activación $\sigma$. Se puede expresar como una función $f: \mathbb{R}^N \to \mathbb{R}^p$ determinada por una familia de $L$ capas neuronales $\{C_l\}_{l=1,...,L}$, de forma que
+Dada una función de activación $\sigma$, una red neuronal feedforward es una composición de capas neuronales con la misma función de activación $\sigma$. Se puede expresar como una función $f: \R^N \to \R^p$ determinada por una familia de $L$ capas neuronales $\{C_l\}_{l=1,...,L}$, de forma que
 $$
     f(\vect{x}) = C_L \circ C_{L-1} \circ \cdots \circ C_1(\vect{x})
 $$
@@ -101,8 +103,8 @@ abstract:
 single hidden layer, arbitrary but bounded activation and non-consttant function are universal approximators in L^p(\mu)
 if the activation function is continuos, bounded an non-constant, 
 
-\prop{Universal approximation theorem}
-Let $\sigma$ be a non-polynomial activation function. Then, given any continuous function $f: [0,1]^n \to \mathbb{R}$ and any $\epsilon > 0$, there exists a neural network $N$ with a single hidden layer with $n$ neurons and activation function $\sigma$ such that
+#### Universal approximation theorem
+Let $\sigma$ be a non-polynomial activation function. Then, given any continuous function $f: [0,1]^n \to \R$ and any $\epsilon > 0$, there exists a neural network $N$ with a single hidden layer with $n$ neurons and activation function $\sigma$ such that
 
 ### Arbitrary width
 
