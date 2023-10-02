@@ -132,3 +132,7 @@ Numeric analysis observation: gotta be careful with vanishing/exploding gradient
 ### Stochastic Gradient Descent
 <!-- esta última probablemente en otro apartado posterior? -->
 <!-- TODO: unir estos? -->
+
+
+
+### Equivalencia a árboles de decisión (?)
