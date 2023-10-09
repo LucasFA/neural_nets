@@ -2,20 +2,16 @@
 \newcommand{\grad}{\nabla}
 \newcommand{\R}{\mathbb{R}}
 
-<!-- Los entornos del repositorio con la plantilla de la UGR -->
-  \newtheorem*{teorema*}{Teorema}
-  \newtheorem{teorema}{Teorema}[chapter]
-  \newtheorem{proposicion}{Proposición}[chapter]
-  \newtheorem{lema}{Lema}[chapter]
-  \newtheorem{corolario}{Corolario}[chapter]
+\newtheorem*{teorema*}{Teorema}
+\newtheorem{teorema}{Teorema}[chapter]
+\newtheorem{proposicion}{Proposición}[chapter]
+\newtheorem{lema}{Lema}[chapter]
+\newtheorem{corolario}{Corolario}[chapter]
 
     \theoremstyle{definition}
-  \newtheorem{definicion}{Definición}[chapter]
+  \newtheorem{definition}{Definición}[chapter]
   \newtheorem{ejemplo}{Ejemplo}[chapter]
-
-    \theoremstyle{remark}
-  \newtheorem{observacion}{Observación}[chapter]
-
+<!-- Los entornos del repositorio con la plantilla de la UGR -->
 
 
 \newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}

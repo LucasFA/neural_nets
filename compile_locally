@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 docker start tfg
+docker exec tfg sh -c "rm -rf /data/docs/"
 docker cp ./docs/ tfg:/data/docs/
 
 docker exec -it --workdir /data/docs tfg sh -c "make web && make pdf"

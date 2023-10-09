@@ -12,12 +12,12 @@ tablenos-caption-name: "Tabla"
 tablenos-number-by-section: true
 ---
 
-# Sinopsis{.unnumbered}
-Lorem ipsum dolor sit amet and so on
-
-# A brief overview{.unnumbered}
-
-Lorem ipsum dolor sit amet and so on
-Lorem ipsum dolor sit amet and so on
-Lorem ipsum dolor sit amet and so on
+<!-- # Sinopsis{.unnumbered} -->
+<!-- Lorem ipsum dolor sit amet and so on -->
+<!---->
+<!-- # A brief overview{.unnumbered} -->
+<!---->
+<!-- Lorem ipsum dolor sit amet and so on -->
+<!-- Lorem ipsum dolor sit amet and so on -->
+<!-- Lorem ipsum dolor sit amet and so on -->
 <!-- LTeX: language=en -->
