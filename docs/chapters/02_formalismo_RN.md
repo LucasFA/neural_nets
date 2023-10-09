@@ -16,7 +16,6 @@ espacio euclídeo = espacio de hilbert de dimensión finita
 ie, el caso usual es el euclídeo 
 -->
 <!-- TODO: ver qué poner exactamente: euclídeo (finito) o Hilbert (caso general) -->
-\begin{definition}
 En su máxima generalidad, dado un espacio vectorial con un producto escalar, $(V, \langle , \rangle)$ sobre un cuerpo $\mathbb{K}$, podemos definir una neurona como una función $f_\sigma: V \to \mathbb{K}$ que se escriba de la siguiente manera: 
 $$f_\sigma(\vect{x}) = \sigma(\langle \vect w, \vect x\rangle + b)$$ 
 donde:
@@ -26,7 +25,7 @@ donde:
 - $\sigma: \mathbb{K} \to \mathbb{K}$, que llamaremos función de activación. 
 
 En este trabajo nos centraremos en el caso en el que $V$ es un espacio euclídeo $\R^n$ y $K = \R$.
-\end{definition}
+
 ### Ejemplos
 
 En el caso usual $V = \R^n$ y $\mathbb{K} = \R$, la neurona se escribe $f(\vect x) = \sigma(\vect w \cdot \vect x + b)$, teniendo $\vect w \in \R^n$, $b \in \R$ y $\sigma: \R \to \R$. 

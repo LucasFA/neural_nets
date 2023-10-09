@@ -39,9 +39,10 @@ Consideramos una familia de variables aleatorias $\{ X_\theta | \theta \in \Thet
 ### MAP
 
 Dada una distribución sobre el espacio paramétrico y una muestra $(X_1, \cdots, X_n)$, el estimador máximo a posteriori se define como 
+
 \begin{align*}
-\hat \theta_{MAP} &= \mathop{arg\, max}_\theta f( \theta | x) \
-                  &= \mathop{arg\, max}_\theta \dfrac{f(x | \theta) g(\theta)} {\int_\Theta f(x | \theta) g(t) dt} \
+\hat \theta_{MAP} &= \mathop{arg\, max}_\theta f( \theta | x) \\
+                  &= \mathop{arg\, max}_\theta \dfrac{f(x | \theta) g(\theta)} {\int_\Theta f(x | \theta) g(t) dt} \\
                   &= \mathop{arg\, max}_\theta f(x | \theta) g(\theta)
 \end{align*}
 
