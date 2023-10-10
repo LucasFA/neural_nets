@@ -52,7 +52,7 @@ donde $w_\lambda$ y $b_\lambda$ son los pesos y sesgo de la neurona $N_\lambda$,
 
 ### Ejemplo
 
-Trabajando en $V = $\R^n$, con $\mathbb{K} = \R$, un conjunto de neuronas finito $\{N_i\}_{i = 1, ..., p}$, con $N_i(\vect x) = \sigma(\vect w_i \cdot \vect x + b_i)$ tenemos que
+Trabajando en $V = \R^n$, con $\mathbb{K} = \R$, un conjunto de neuronas finito $\{N_i\}_{i = 1, ..., p}$, con $N_i(\vect x) = \sigma(\vect w_i \cdot \vect x + b_i)$ tenemos que
 $$
 C(\vect x) = \left(\sigma(\vect w_i \cdot \vect x + b_i) \right)_{i = 1, ..., p}
 $$
