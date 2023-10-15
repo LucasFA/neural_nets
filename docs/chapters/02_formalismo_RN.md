@@ -88,8 +88,20 @@ Resultado: una red neuronal con función de activación lineal/polinómica es eq
 
 ## Entrenamiento
 
+### Inicio
+
+Suponemos que nuestra función objetivo es la suma de una función $y$ y un término de ruido $\epsilon$, con $\epsilon ~ \Normal (0, \sigma^2 = \beta ^ {-1}). Entonces la distribución de $t$ dados esos valores es:
+
+$$t | \vec x, \vec w, \beta ~ \Normal( \mu = y(\vec x, \vec w), \sigma^2 = \beta ^ {-1})$$
+
+Naturalmente, $\Expectation \[t | \vec x\] = y(\vec x, \vec w)$.
+
+Obsérvese que en realidad sólo tratamos el caso en que la distribución de $t$ condicionada a $\vec x$ es unimodal.
+
+Las soluciones analíticas que requieren procesar todo el conjunto de datos al mismo tiempo suelen resultar computacionalmente muy costosos de aplicar. Por ello, se suele aplicar _descenso de gradiente estocástico_, o variaciones. De acuerdo con \cite[p.~144]{ BishopPattern }, dado un peso $\vec w ^{(\tau)}$, $\eta \in \R^+$ llamado parámetro de aprendizaje y un  
+
 Vemos Backpropagation, o al menos lo necesario para los teoremas de convergencia. En algún momento sí creo estaría bien tratar SGD.
-## Teoremas de convergencia
+### Teoremas de convergencia
 Bajo condiciones débiles sobre la función de activación hay varios resultados sobre la convergencia de las redes neuronales tomando el límite en número de capas o número de neuronas por capa a infinito. 
 <!-- Número de capas y número de neuronas por capa acotado también había algo -->
 - Se puede aproximar cualquier función continua con una red neuronal con una única capa oculta y una función de activación no polinómica.

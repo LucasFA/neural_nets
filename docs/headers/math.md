@@ -1,3 +1,5 @@
+\newcommand{\Expectation}{\mathbb{E}}
+\newcommand{\Normal}{\mathcal{N}}
 \newcommand{\vect}[1]{\mathbf{#1}}
 \newcommand{\grad}{\nabla}
 \newcommand{\R}{\mathbb{R}}
