@@ -90,11 +90,11 @@ Resultado: una red neuronal con función de activación lineal/polinómica es eq
 
 ### Inicio
 
-Suponemos que nuestra función objetivo es la suma de una función $y$ y un término de ruido $\epsilon$, con $\epsilon ~ \Normal (0, \sigma^2 = \beta ^ {-1}). Entonces la distribución de $t$ dados esos valores es:
+Suponemos que nuestra función objetivo es la suma de una función $y$ y un término de ruido $\epsilon$, con $\epsilon ~ \Normal (0, \sigma^2 = \beta ^ {-1})$. Entonces la distribución de $t$ dados esos valores es:
 
 $$t | \vec x, \vec w, \beta ~ \Normal( \mu = y(\vec x, \vec w), \sigma^2 = \beta ^ {-1})$$
 
-Naturalmente, $\Expectation \[t | \vec x\] = y(\vec x, \vec w)$.
+Naturalmente, $\Expectation [t | \vec x] = y(\vec x, \vec w)$.
 
 Obsérvese que en realidad sólo tratamos el caso en que la distribución de $t$ condicionada a $\vec x$ es unimodal.
 
