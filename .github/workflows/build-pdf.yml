@@ -1,16 +1,13 @@
 name: construir_pdf
 on: 
   workflow_dispatch:
-  schedule: 
-    - cron: '00 03 * * 1,5'
-
 
 jobs:
   build-pdf:
     name: Construir el PDF
 
     runs-on: ubuntu-latest
-    container: asmilex/raytracing
+    container: lucasfa/pandoc_tfg:1.0
 
     steps:
       - name: Checkout code
