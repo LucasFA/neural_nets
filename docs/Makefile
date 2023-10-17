@@ -23,8 +23,8 @@
 # ============================================================================
 
 
-TARGET_PDF = ./outputs/TFG
-TARGET_WEB = ./outputs/index
+TARGET_PDF = ./output/TFG
+TARGET_WEB = ./output/index
 
 SOURCES = ./headers/meta.md ./headers/math.md
 SOURCES += $(shell find . -wholename './chapters/*.md' | sort | awk -F'\0' '{print $2}')
