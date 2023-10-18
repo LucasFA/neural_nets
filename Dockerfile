@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y make git wget sudo chafa python3-full
 RUN wget https://github.com/jgm/pandoc/releases/download/3.1.8/pandoc-3.1.8-1-amd64.deb && dpkg -i pandoc-3.1.8-1-amd64.deb
 RUN python3 -m venv /home/.venv
 RUN /home/.venv/bin/pip install pandoc-eqnos pandoc-fignos pandoc-tablenos
+RUN alias python3=/home/.venv/bin/python
 
 # Instalar Crimson Pro y Julia Mono
 RUN cd /usr/share/fonts/opentype && \

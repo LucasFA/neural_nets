@@ -7,7 +7,10 @@ jobs:
     name: Construir el PDF
 
     runs-on: ubuntu-latest
-    container: lucasfa/pandoc_tfg:1.0
+    container:
+      image: lucasfa/pandoc_tfg:1.0
+      volumes: 
+        - ${{ github.workspace }}/docs
 
     steps:
       - name: Checkout code
