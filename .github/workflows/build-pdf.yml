@@ -1,6 +1,7 @@
 name: construir_pdf
 on: 
   workflow_dispatch:
+  workflow_call:
 
 jobs:
   build-pdf:
@@ -10,7 +11,7 @@ jobs:
     container:
       image: lucasfa/pandoc_tfg:1.0
       volumes: 
-        - ${{ github.workspace }}/docs
+        - ${{ github.workspace }}:/docs
 
     steps:
       - name: Checkout code
@@ -36,6 +37,7 @@ jobs:
         if: success()
         uses: softprops/action-gh-release@v1
         with:
-          files: ./docs/TFG.pdf
+          files: ./docs/output/TFG.pdf
           tag_name: ${{ env.TAG_NAME }}
           body: "Release new pdf"
+
