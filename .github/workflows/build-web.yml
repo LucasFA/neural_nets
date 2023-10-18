@@ -16,9 +16,9 @@ jobs:
 
     runs-on: ubuntu-latest
     container: 
-      image: lucasfa/pandoc_tfg:1.0
+      image: lucasfa/pandoc_tfg:asmi_rt
       volumes: 
-        - ${{ github.workspace }}:/docs
+        - ${{ github.workspace }}/docs:/data
 
     steps:
       - name: Checkout code
@@ -29,6 +29,7 @@ jobs:
           pwd
           cd docs
           ls
+          mkdir ./output
           make PANDOC_EXEC=pandoc web
           sed -i 's/<img/<img loading="lazy"/' index.html
 

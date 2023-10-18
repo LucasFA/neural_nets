@@ -23,8 +23,8 @@
 # ============================================================================
 
 
-TARGET_PDF = ./output/TFG
-TARGET_WEB = ./output/index
+TARGET_PDF = TFG
+TARGET_WEB = index
 
 SOURCES = ./headers/meta.md ./headers/math.md
 SOURCES += $(shell find . -wholename './chapters/*.md' | sort | awk -F'\0' '{print $2}')
@@ -36,9 +36,9 @@ PANDOC_FLAGS =\
 	--from markdown-markdown_in_html_blocks-native_divs \
 	--listings \
 	--top-level-division="chapter" \
-	--filter /home/.venv/bin/pandoc-eqnos \
-	--filter /home/.venv/bin/pandoc-fignos \
-	--filter /home/.venv/bin/pandoc-tablenos \
+	--filter pandoc-eqnos \
+	--filter pandoc-fignos \
+	--filter pandoc-tablenos \
 	--citeproc \
 	--csl ./headers/chicago-alt.csl \
 	--bibliography ./chapters/bibliography.bib

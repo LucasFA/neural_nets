@@ -2,4 +2,4 @@
 /usr/bin/docker run \
   --rm \
   -v "$(pwd)/docs:/data" \
-  lucas/pandoc_tfg:1.0
+  lucasfa/pandoc_tfg:asmi_rt
