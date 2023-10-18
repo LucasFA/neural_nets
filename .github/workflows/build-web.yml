@@ -26,9 +26,7 @@ jobs:
 
       - name: Compile web documentation
         run: |
-          pwd
           cd docs
-          ls
           mkdir ./output
           make PANDOC_EXEC=pandoc web
           sed -i 's/<img/<img loading="lazy"/' index.html

@@ -3,41 +3,27 @@ on:
   schedule: 
     - cron: '00 03 * * *'
 
-
 jobs:
   build-pdf:
     uses: ./.github/workflows/build-pdf.yml
- #  build-pdf:
- #    name: Construir el PDF
- #
- #    runs-on: ubuntu-latest
- #    container:
- #      image: lucasfa/pandoc_tfg:1.0
- #      volumes: 
- #        - ${{ github.workspace }}/docs
- #
- #    steps:
- #      - name: Checkout code
- #        uses: actions/checkout@v3
- #
- #      - name: Compile pdf documentation
- #        run: |
- #          cd docs
- #          make PANDOC_EXEC=pandoc pdf
- # 
- #
-  upload-pdf:
-    name: Uploads pdf artifact
+
+  publish-pdf:
+    name: Tag pdf artifact
     needs: build-pdf    
     permissions:
       pages: write
       id-token: write
 
     steps:
+      - name: Download pdf
+        uses: actions/downlaod-artifact@v3
+        with:
+          name: pdf
+
       - name: Update nightly release
         uses: pyTooling/Actions/releaser@main
         with:
           tag: nightly
           rm: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          files: ./docs/output/TFG.pdf
+          files: ./TFG.pdf
