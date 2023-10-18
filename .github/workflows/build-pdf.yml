@@ -1,4 +1,4 @@
-name: construir_pdf
+name: Construir pdf
 on: 
   workflow_call:
 

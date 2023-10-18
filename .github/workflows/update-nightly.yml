@@ -1,4 +1,4 @@
-name: nightly pdf update
+name: Nightly pdf update
 on: 
   schedule: 
     - cron: '00 03 * * *'
