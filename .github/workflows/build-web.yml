@@ -18,7 +18,7 @@ jobs:
     container: 
       image: lucasfa/pandoc_tfg:1.0
       volumes: 
-        - ${{ github.workspace }}/docs
+        - ${{ github.workspace }}:/docs
 
 
     steps:
