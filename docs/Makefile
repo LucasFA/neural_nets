@@ -36,9 +36,9 @@ PANDOC_FLAGS =\
 	--from markdown-markdown_in_html_blocks-native_divs \
 	--listings \
 	--top-level-division="chapter" \
-	--filter pandoc-eqnos \
-	--filter pandoc-fignos \
-	--filter pandoc-tablenos \
+	--filter /home/.venv/bin/pandoc-eqnos \
+	--filter /home/.venv/bin/pandoc-fignos \
+	--filter /home/.venv/bin/pandoc-tablenos \
 	--citeproc \
 	--csl ./headers/chicago-alt.csl \
 	--bibliography ./chapters/bibliography.bib
