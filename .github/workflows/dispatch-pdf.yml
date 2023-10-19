@@ -1,7 +1,6 @@
 name: Publicar pdf manualmente
 on: 
   workflow_dispatch:
-  workflow_call:
 
 jobs:
   build-pdf:
@@ -14,9 +13,11 @@ jobs:
       pages: write
       id-token: write
 
+    runs-on: ubuntu-latest
+
     steps:
       - name: Download pdf
-        uses: actions/downlaod-artifact@v3
+        uses: actions/download-artifact@v3
         with:
           name: pdf
 

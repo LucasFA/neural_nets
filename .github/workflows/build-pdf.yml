@@ -25,5 +25,5 @@ jobs:
         if: success()
         with:
           name: pdf
-          path: ./TFG.pdf
+          path: ./docs/TFG.pdf
 
