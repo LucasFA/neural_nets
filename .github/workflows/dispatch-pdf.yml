@@ -21,24 +21,16 @@ jobs:
         with:
           name: pdf
 
-      - name: Set TAG_NAME
+      - name: Rename pdf
         run: |
-          echo "TAG_NAME=$(date -u +'%Y-%m-%d_UTC_%H-%M')" >> $GITHUB_ENV
+          echo "PDF_NAME=$(date -u +'%Y-%m-%d_UTC_%H-%M')" >> $GITHUB_ENV
+          mv pdf ./${{ env.PDF_NAME}}
 
-      - uses: actions/checkout@v4
-
-      - name: Create tag
-        if: success()
-        uses: rickstaa/action-create-tag@v1
-        id: "create_tag"
+      - name: Update nightly release
+        uses: pyTooling/Actions/releaser@main
         with:
-          tag: ${{ env.TAG_NAME}}
-
-      - name: Create release with pdf
-        if: success()
-        uses: softprops/action-gh-release@v1
-        with:
-          files: ./pdf
-          tag_name: ${{ env.TAG_NAME }}
-          body: "Release new pdf"
+          tag: manual-release
+          rm: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: ./${{ env.PDF_NAME}}
 
