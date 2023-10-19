@@ -25,6 +25,8 @@ jobs:
         run: |
           echo "TAG_NAME=$(date -u +'%Y-%m-%d_UTC_%H-%M')" >> $GITHUB_ENV
 
+      - uses: actions/checkout@v4
+
       - name: Create tag
         if: success()
         uses: rickstaa/action-create-tag@v1
@@ -36,7 +38,7 @@ jobs:
         if: success()
         uses: softprops/action-gh-release@v1
         with:
-          files: ./TFG.pdf
+          files: ./pdf
           tag_name: ${{ env.TAG_NAME }}
           body: "Release new pdf"
 
