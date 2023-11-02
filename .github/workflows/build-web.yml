@@ -30,6 +30,7 @@ jobs:
           mkdir ./output
           make PANDOC_EXEC=pandoc web
           sed -i 's/<img/<img loading="lazy"/' index.html
+          mv index.html ./output/
 
       - uses: actions/upload-pages-artifact@v2
         with:
