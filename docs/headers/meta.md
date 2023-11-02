@@ -7,7 +7,6 @@ header-includes: |
     \usepackage{caption}
     \usepackage{subcaption}
     \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
-    \usepackage{biblatex}
 fignos-caption-name: "Figura"
 tablenos-caption-name: "Tabla"
 tablenos-number-by-section: true
