@@ -11,8 +11,8 @@
 \newtheorem{corolario}{Corolario}[chapter]
 
 \theoremstyle{definition}
-\newtheorem{def}{Definición}[chapter]
-\newtheorem{eg}{Ejemplo}[chapter]
+\newtheorem{definition}{Definición}[chapter]
+\newtheorem{ejemplo}{Ejemplo}[chapter]
 <!-- Los entornos del repositorio con la plantilla de la UGR -->
 
 \newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}

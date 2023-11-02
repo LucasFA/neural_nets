@@ -94,7 +94,7 @@ Suponemos que nuestra función objetivo es la suma de una función $y$ y un tér
 
 $$t | \vec x, \vec w, \beta ~ \Normal( \mu = y(\vec x, \vec w), \sigma^2 = \beta ^ {-1})$$
 
-Naturalmente, $\Expectation [t | \vec x] = y(\vec x, \vec w)$.
+Naturalmente, $\Esperanza[t | \vec x] = y(\vec x, \vec w)$.
 
 Obsérvese que en realidad sólo tratamos el caso en que la distribución de $t$ condicionada a $\vec x$ es unimodal.
 
