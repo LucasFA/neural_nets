@@ -1,4 +1,4 @@
-\newcommand{\Expectation}{\mathbb{E}}
+\newcommand{\Esperanza}{\mathbb{E}}
 \newcommand{\Normal}{\mathcal{N}}
 \newcommand{\vect}[1]{\mathbf{#1}}
 \newcommand{\grad}{\nabla}
@@ -6,15 +6,14 @@
 
 \newtheorem*{teorema*}{Teorema}
 \newtheorem{teorema}{Teorema}[chapter]
-\newtheorem{proposicion}{Proposición}[chapter]
+\newtheorem{prop}{Proposición}[chapter]
 \newtheorem{lema}{Lema}[chapter]
 \newtheorem{corolario}{Corolario}[chapter]
 
-    \theoremstyle{definition}
-  \newtheorem{definition}{Definición}[chapter]
-  \newtheorem{ejemplo}{Ejemplo}[chapter]
+\theoremstyle{definition}
+\newtheorem{def}{Definición}[chapter]
+\newtheorem{eg}{Ejemplo}[chapter]
 <!-- Los entornos del repositorio con la plantilla de la UGR -->
-
 
 \newcommand*\Eval[3]{\left.#1\right\rvert_{#2}^{#3}}
 \newcommand*\abs[1]{\left\lvert #1 \right\rvert}
