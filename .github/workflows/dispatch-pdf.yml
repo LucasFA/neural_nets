@@ -24,7 +24,6 @@ jobs:
       - name: Rename pdf
         run: |
           echo "PDF_NAME=$(date -u +'%Y-%m-%d_UTC_%H-%M')" >> $GITHUB_ENV
-          mv pdf ./${{ env.PDF_NAME}}
 
       - name: Update nightly release
         uses: pyTooling/Actions/releaser@main
@@ -32,5 +31,5 @@ jobs:
           tag: manual-release
           rm: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          files: ./${{ env.PDF_NAME}}
+          files: ./pdf
 
