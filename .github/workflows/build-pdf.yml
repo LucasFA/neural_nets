@@ -26,4 +26,5 @@ jobs:
         with:
           name: pdf
           path: ./docs/TFG.pdf
+          if-no-files-found: error
 
