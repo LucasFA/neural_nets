@@ -23,6 +23,7 @@ jobs:
 
       - name: Rename pdf
         run: |
+          echo $(ls)
           echo "PDF_NAME=$(date -u +'%Y-%m-%d_UTC_%H-%M')" >> $GITHUB_ENV
 
       - name: Update nightly release
@@ -31,5 +32,5 @@ jobs:
           tag: manual-release
           rm: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          files: ./pdf
+          files: ./TFG.pdf
 
