@@ -8,10 +8,10 @@ source: Bishop page 46
     En regresión, una de las funciones de pérdida más comunes es la cuadrática: $L(\vec Y, f(\vec X)) = ||\vec Y - f(\vec X)||^2$
 \end{ejemplo}
 
-\begin{definition}{Funci'on de riesgo}
-    Dada una funci'on de p'erdida $L$, se define la funci'on de riesgo asociada como:
+\begin{definition}{Función de riesgo}
+    Dada una función de pérdida $L$, se define la función de riesgo asociada como:
     $$R(f) = \Esperanza[L(\vec Y, f(\vec X))]$$
-    donde la esperanza se toma sobre la distribuci'on conjunta de $\vec X$ y $\vec Y$.
+    donde la esperanza se toma sobre la distribución conjunta de $\vec X$ y $\vec Y$.
 \end{definition}
 
 \begin{prop}\cite[18]{elements_of_statistical_learning}
