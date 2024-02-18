@@ -72,10 +72,16 @@ pdf: $(SOURCES) $(SOURCES_PDF)
 	$(PANDOC_EXEC) $(PANDOC_FLAGS) $(PANDOC_FLAGS_PDF) $(LATEX_FLAGS) -o $(TARGET_PDF).pdf $(SOURCES) $(SOURCES_PDF)
 	$(info Terminado.)
 
+tex: $(SOURCES) $(SOURCES_PDF)
+	$(info Compilando $(TARGET_PDF).tex)
+	$(PANDOC_EXEC) $(PANDOC_FLAGS) $(PANDOC_FLAGS_PDF) $(LATEX_FLAGS) -o $(TARGET_PDF).tex $(SOURCES) $(SOURCES_PDF)
+	$(info Terminado.)
+
 web: $(SOURCES) $(SOURCES_WEB)
 	$(info Compilando $(TARGET_WEB).html...)
 	$(PANDOC_EXEC) $(PANDOC_FLAGS) $(PANDOC_FLAGS_WEB) $(LATEX_FLAGS) -o $(TARGET_WEB).html $(SOURCES) $(SOURCES_WEB)
 	$(info Terminado.)
+
 
 clean:
 	rm -f *.aux *.log *.nav *.out *.snm *.toc *.vrb tags || true
