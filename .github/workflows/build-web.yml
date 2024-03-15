@@ -16,13 +16,13 @@ jobs:
 
     runs-on: ubuntu-latest
     container: 
-      image: lucasfa/pandoc_tfg:asmi_rt
+      image: lucasfa/pandoc_tfg:self_built
       volumes: 
         - ${{ github.workspace }}/docs:/data
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Compile web documentation
         run: |
